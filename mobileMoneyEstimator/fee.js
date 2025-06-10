@@ -1,6 +1,5 @@
 function estimateTransactionFee(amountToSend) {
-  const percentage = 0.015;
-  let fee = amountToSend * percentage;
+  let fee = amountToSend * 0.015;
 
   if (fee < 10) {
     fee = 10;
@@ -8,14 +7,14 @@ function estimateTransactionFee(amountToSend) {
     fee = 70;
   }
 
-  const total = amountToSend + fee;
+  const totalDebited = amountToSend + fee;
 
   console.log(`Sending KES ${amountToSend}:
 Calculated Transaction Fee: KES ${fee}
-Total amount to be debited: KES ${total}
+Total amount to be debited: KES ${totalDebited}
 
 Send Money Securely!`);
 }
 
-const input = prompt("Unatuma Ngapi? (KES):");
-estimateTransactionFee(Number(input));
+const amountInput = prompt("Unatuma Ngapi? (KES):");
+estimateTransactionFee(Number(amountInput));
